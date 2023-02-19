@@ -12,19 +12,19 @@ Using psql inside container
 
 Inside psql, the following commands were used
 
-> $create database api_todo;
-> $create user_todo;
-> $alter user user_todo with encrypted password '1234';
-> $grant all privileges on database api_todo to user_todo;
+> $create database api_todo;  
+> $create user_todo;  
+> $alter user user_todo with encrypted password '1234';  
+> $grant all privileges on database api_todo to user_todo;  
 
 List tables
-> $\l
+> $\l  
 
 Connecting in table
-> $\c api_todo;
-> $create table todos (id serial primary key, title varchar, description text, done bool default false)
-> $\dt // just for check table creation
-> $grant all privileges on all tables in schema public to user_todo;
+> $\c api_todo;  
+> $create table todos (id serial primary key, title varchar, description text, done bool default false);  
+> $\dt // just for check table creation;  
+> $grant all privileges on all tables in schema public to user_todo;  
 > $grant all privileges on all sequences in schema public to user_todo;
 
 
